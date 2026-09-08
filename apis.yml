@@ -1,0 +1,55 @@
+name: BetTip Draws API
+description: >-
+  A free, keyless lottery-results data feed providing JSON and CSV results for UK49s, Russia Gosloto, the South African
+  National Lottery, and a small set of world draws. Backed by a public OpenAPI 3.0.3 contract, open CORS, HTTPS, and no
+  authentication. Operated by Easybet Group (Pty) Ltd under the BetTip brand; data is CC BY 4.0.
+url: https://raw.githubusercontent.com/api-evangelist/bettip-draws-api/refs/heads/main/apis.yml
+created: '2026-09-08'
+modified: '2026-09-08'
+specificationVersion: '0.21'
+tags:
+  - Lottery results
+  - UK49s
+  - Gosloto
+  - SA National Lottery
+  - JSON
+  - CSV
+  - OpenAPI
+  - Sports/Betting data
+  - Reference data
+  - Open data
+  - Gambling & Betting
+apis:
+  - name: BetTip Draws API
+    description: >-
+      Keyless, CORS-open REST API serving lottery draw results as JSON and CSV across UK49s, Gosloto, SA National
+      Lottery, and world draws. Documented by a public OpenAPI 3.0.3 spec and an llms.txt agent-native surface.
+    humanURL: https://bettip.co.za/api/
+    baseURL: https://bettip.co.za/api/v1/
+    tags:
+      - Lottery results
+      - UK49s
+      - Gosloto
+      - SA National Lottery
+      - JSON
+      - CSV
+      - OpenAPI
+      - Sports/Betting data
+      - Reference data
+      - Open data
+      - Gambling & Betting
+    properties:
+      - type: OpenAPI
+        url: https://bettip.co.za/api/openapi.json
+      - type: Documentation
+        url: https://bettip.co.za/api/
+      - type: LLMsTxt
+        url: https://bettip.co.za/llms.txt
+maintainers:
+  - FN: BetTip (Easybet Group (Pty) Ltd)
+    url: https://bettip.co.za/
+generated:
+  by: apis.io/add
+  model: claude-opus-4-8
+  confidence: 97
+  at: '2026-09-08T14:52:42.802Z'
