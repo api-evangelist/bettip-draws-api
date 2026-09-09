@@ -1,0 +1,29 @@
+generated: '2026-09-09'
+method: derived
+source: openapi/bettip-draws-api-openapi.json + https://bettip.co.za/api/
+format: custom
+note: >-
+  Not RFC 9457 — the spec declares plain 404 responses with a description only
+  and no error body schema (no application/problem+json). The docs page
+  documents no error reference. Unknown paths outside the API return the
+  site's HTML 404 page.
+problems:
+  - status: 404
+    title: Unknown game
+    detail: >-
+      Returned by /gosloto/next.json, /lotto/next.json and /world/next.json
+      when the optional ?game= query names a game the family does not carry.
+    remediation: Omit the game parameter to get every game in the family, or use a game key from the family's latest.json response.
+    operations:
+      - GET /gosloto/next.json
+      - GET /lotto/next.json
+      - GET /world/next.json
+  - status: 404
+    title: No draws for that year or date
+    detail: >-
+      Returned by /uk49s/{year}.json and /uk49s/draws/{date}.json when the
+      year predates the archive (before 2018) or no draw exists for the date.
+    remediation: Use a year from 2018 onward or a date present in /uk49s/draws.json.
+    operations:
+      - GET /uk49s/{year}.json
+      - GET /uk49s/draws/{date}.json

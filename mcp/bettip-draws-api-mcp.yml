@@ -1,0 +1,66 @@
+generated: '2026-09-09'
+method: derived
+source: openapi/bettip-draws-api-openapi.json (no provider MCP server found)
+status: candidate
+note: >-
+  BetTip ships no MCP server, hosted or local — none is mentioned in the API
+  docs, the llms.txt, or the zaiqltd GitHub org. This is a DERIVED candidate
+  tool list from the 19 read-only OpenAPI operations; nobody serves these
+  tools today. The API is keyless and CORS-open, so a generic OpenAPI-to-MCP
+  bridge could serve it without credentials.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: none
+  verified: derived
+tools:
+  - name: uk49s_latest
+    description: Latest UK49s results per draw (Lunchtime, Teatime, Brunchtime, Drivetime) plus recent draws
+    operation: GET /uk49s/latest.json
+  - name: uk49s_next
+    description: Countdown and schedule for the next UK49s draw
+    operation: GET /uk49s/next.json
+  - name: uk49s_schedule
+    description: UK49s draw times with UTC offsets
+    operation: GET /uk49s/schedule.json
+  - name: uk49s_draws
+    description: Full UK49s draw archive since 2018-09-01 (JSON or CSV)
+    operation: GET /uk49s/draws.json
+  - name: uk49s_draws_by_year
+    description: UK49s draws for a given year (2018 onward)
+    operation: GET /uk49s/{year}.json
+  - name: uk49s_draws_by_date
+    description: UK49s draws for a given date (YYYY-MM-DD)
+    operation: GET /uk49s/draws/{date}.json
+  - name: gosloto_latest
+    description: Latest Russia Gosloto results per game
+    operation: GET /gosloto/latest.json
+  - name: gosloto_next
+    description: Next scheduled Gosloto draw per game, with estimates labelled
+    operation: GET /gosloto/next.json
+  - name: gosloto_draws
+    description: Gosloto draw archive (JSON or CSV)
+    operation: GET /gosloto/draws.json
+  - name: lotto_latest
+    description: Latest SA National Lottery results per game (SA Lotto, Lotto Plus 1, PowerBall, PowerBall Plus, Daily Lotto)
+    operation: GET /lotto/latest.json
+  - name: lotto_next
+    description: SA National Lottery game schedules and next draws
+    operation: GET /lotto/next.json
+  - name: lotto_draws
+    description: SA National Lottery draw archive since 2015-01-02 (JSON or CSV)
+    operation: GET /lotto/draws.json
+  - name: lotto_payouts
+    description: SA National Lottery payout data per division
+    operation: GET /lotto/payouts.json
+  - name: world_latest
+    description: Latest results for the eight world draws
+    operation: GET /world/latest.json
+  - name: world_next
+    description: Next draw per world game
+    operation: GET /world/next.json
+  - name: world_draws
+    description: World draws archive
+    operation: GET /world/draws.json

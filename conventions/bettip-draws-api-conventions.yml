@@ -1,0 +1,49 @@
+generated: '2026-09-09'
+method: searched
+source: https://bettip.co.za/api/ + openapi/bettip-draws-api-openapi.json + live response headers (probed 2026-09-09)
+note: >-
+  A read-only, keyless data feed: every operation is GET, there is no write
+  surface, so idempotency, reversibility and dry-run are all na — they leave
+  the denominator rather than scoring zero.
+auth:
+  style: none
+  detail: No key, no account, open to any origin (CORS Access-Control-Allow-Origin *)
+versioning:
+  style: url-path
+  current: v1
+pagination:
+  style: file-partitioned
+  detail: >-
+    No cursor or page parameters. Archives are partitioned into whole-archive
+    files (draws.json / draws.csv), per-year files (/uk49s/{year}.json) and
+    per-date files (/uk49s/draws/{date}.json).
+media_types:
+  - application/json
+  - text/csv
+error_envelope:
+  format: custom
+  detail: Plain 404 with description only; no problem+json body schema. See errors/bettip-draws-api-problem-types.yml.
+rate_limit_signaling:
+  headers: []
+  detail: >-
+    No RateLimit-* / X-RateLimit-* / Retry-After headers observed on live
+    responses. Docs ask consumers to cache archive responses and revalidate;
+    responses carry Cache-Control public max-age=300 and ETag for conditional
+    revalidation. See rate-limits/bettip-draws-api-rate-limits.yml.
+caching:
+  cache_control: public, max-age=300
+  etag: true
+request_id_tracing: null
+field_expansion: null
+idempotency:
+  coverage: na
+  detail: Read-only API — every operation is GET; there is no mutating surface to protect.
+reversibility:
+  status: na
+  detail: Read-only API — no write surface exists, so there is nothing to reverse.
+dry_run_mode: na
+cross_links:
+  errors: errors/bettip-draws-api-problem-types.yml
+  lifecycle: lifecycle/bettip-draws-api-lifecycle.yml
+  authentication: authentication/bettip-draws-api-authentication.yml
+  rate_limits: rate-limits/bettip-draws-api-rate-limits.yml

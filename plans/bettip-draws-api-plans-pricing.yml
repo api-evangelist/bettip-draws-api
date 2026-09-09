@@ -1,0 +1,21 @@
+generated: '2026-09-09'
+method: searched
+source: https://bettip.co.za/api/
+plan_count: 1
+note: >-
+  A single free tier is the entire pricing model — there is no paid plan, no
+  subscription, and no enterprise gate. The docs state the data is "Free for
+  any use, commercial included" with attribution to BetTip required. Data is
+  CC BY 4.0; the widget/example code is MIT.
+plans:
+  - name: Free
+    price: 0
+    currency: null
+    billing_period: null
+    included_quota: null
+    overage: null
+    limits: >-
+      No published quota or hard limit. Consumers are asked to be reasonable
+      with traffic and to cache and revalidate archive responses.
+    conditions:
+      - Attribution to BetTip with a link to https://bettip.co.za/ wherever the data is shown

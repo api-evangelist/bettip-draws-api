@@ -1,0 +1,19 @@
+generated: '2026-09-09'
+method: searched
+source: https://bettip.co.za/api/ + live response headers (probed 2026-09-09)
+limit_count: 0
+note: >-
+  No rate limits are documented and no rate-limit headers are returned. The
+  docs' only guidance is behavioral: "Be reasonable with traffic: cache
+  archive responses and revalidate them; the high-frequency games can change
+  many times per day." Live responses (GET /api/v1/uk49s/latest.json, 200)
+  carry Cache-Control: public, max-age=300 and an ETag for conditional
+  requests, served behind Cloudflare — an honest zero, recorded as data.
+limits: []
+response_headers:
+  observed:
+    - 'cache-control: public, max-age=300'
+    - 'etag: (present)'
+    - 'access-control-allow-origin: *'
+  rate_limit_headers: []
+exhaustion_status: null

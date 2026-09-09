@@ -1,0 +1,90 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the BetTip Draws API OpenAPI
+  version: 1.0.0
+x-provenance:
+  generated: '2026-09-09'
+  method: generated
+  source: openapi/bettip-draws-api-openapi.json
+  note: >-
+    Non-destructive enhancement layer over the provider's spec (fetched
+    verbatim from https://bettip.co.za/api/openapi.json). Adds catalog
+    metadata, external docs, and family tags. The original spec is never
+    mutated.
+extends: ../openapi/bettip-draws-api-openapi.json
+actions:
+  - target: $.info
+    update:
+      x-apisio-slug: bettip-draws-api
+      termsOfService: https://bettip.co.za/api/
+  - target: $
+    update:
+      externalDocs:
+        description: BetTip Draws API documentation
+        url: https://bettip.co.za/api/
+      tags:
+        - name: uk49s
+          description: UK49s draws, schedules and archives (Lunchtime and Teatime are the official draws; Brunchtime and Drivetime are operator draws)
+        - name: gosloto
+          description: Russia Gosloto draws and schedules, published in SAST
+        - name: lotto
+          description: SA National Lottery draws, schedules and payouts
+        - name: world
+          description: Eight world draws, collected forward from 2026-08-29
+  - target: $.paths['/uk49s/latest.json'].get
+    update:
+      tags: [uk49s]
+  - target: $.paths['/uk49s/next.json'].get
+    update:
+      tags: [uk49s]
+  - target: $.paths['/uk49s/schedule.json'].get
+    update:
+      tags: [uk49s]
+  - target: $.paths['/uk49s/draws.json'].get
+    update:
+      tags: [uk49s]
+  - target: $.paths['/uk49s/draws.csv'].get
+    update:
+      tags: [uk49s]
+  - target: $.paths['/uk49s/{year}.json'].get
+    update:
+      tags: [uk49s]
+  - target: $.paths['/uk49s/draws/{date}.json'].get
+    update:
+      tags: [uk49s]
+  - target: $.paths['/gosloto/latest.json'].get
+    update:
+      tags: [gosloto]
+  - target: $.paths['/gosloto/next.json'].get
+    update:
+      tags: [gosloto]
+  - target: $.paths['/gosloto/draws.json'].get
+    update:
+      tags: [gosloto]
+  - target: $.paths['/gosloto/draws.csv'].get
+    update:
+      tags: [gosloto]
+  - target: $.paths['/lotto/latest.json'].get
+    update:
+      tags: [lotto]
+  - target: $.paths['/lotto/next.json'].get
+    update:
+      tags: [lotto]
+  - target: $.paths['/lotto/draws.json'].get
+    update:
+      tags: [lotto]
+  - target: $.paths['/lotto/draws.csv'].get
+    update:
+      tags: [lotto]
+  - target: $.paths['/lotto/payouts.json'].get
+    update:
+      tags: [lotto]
+  - target: $.paths['/world/latest.json'].get
+    update:
+      tags: [world]
+  - target: $.paths['/world/next.json'].get
+    update:
+      tags: [world]
+  - target: $.paths['/world/draws.json'].get
+    update:
+      tags: [world]

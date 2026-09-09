@@ -1,0 +1,17 @@
+generated: '2026-09-09'
+method: searched
+source: https://bettip.co.za/api/ + openapi/bettip-draws-api-openapi.json
+docs: https://bettip.co.za/api/
+note: >-
+  Deliberately unauthenticated: the docs state "No key, no account, open to
+  any origin" and the OpenAPI declares no securitySchemes. Verified live —
+  GET https://bettip.co.za/api/v1/uk49s/latest.json returns 200 with
+  Access-Control-Allow-Origin: * and no credentials. Attribution to BetTip
+  (link to https://bettip.co.za/) is the only usage condition.
+schemes: []
+authentication:
+  required: false
+  type: none
+  cors: open
+  conditions:
+    - Attribution to BetTip with a link to https://bettip.co.za/ wherever the data is shown

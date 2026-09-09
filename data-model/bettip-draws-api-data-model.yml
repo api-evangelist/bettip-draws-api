@@ -1,0 +1,42 @@
+generated: '2026-09-09'
+method: derived
+source: openapi/bettip-draws-api-openapi.json ($ref graph)
+note: >-
+  Derived from the six component schemas. The model is small and archival:
+  draws keyed by date and draw name, grouped into game families (uk49s,
+  gosloto, lotto, world), with schedule/next-draw objects computed per family.
+  No identifiers cross the API boundary — there are no id-prefix domains.
+entities:
+  - name: Uk49sDraw
+    description: One UK49s draw — date, draw (brunchtime/lunchtime/drivetime/teatime), six numbers (1-49), booster, official flag
+  - name: Uk49sDraws
+    description: Array of Uk49sDraw — the archive (5,801+ draws since 2018-09-01)
+  - name: Uk49sLatest
+    description: Latest draw per draw name plus a recent-draws list
+  - name: ScheduleGame
+    description: A game's schedule entry — status (site/observed/official/official-approximate/pending), estimate flag, source, next-draw times in UTC and SAST
+  - name: FamilyNext
+    description: Next scheduled draw across a game family (gosloto/lotto/world), by game and soonest overall
+  - name: Next
+    description: Countdown to the next UK49s draw with today's draw list
+relationships:
+  - from: Uk49sDraws
+    to: Uk49sDraw
+    kind: has_many
+    via: items
+  - from: Uk49sLatest
+    to: Uk49sDraw
+    kind: has_many
+    via: byDraw (keyed by draw name)
+  - from: Uk49sLatest
+    to: Uk49sDraws
+    kind: has_one
+    via: recent
+  - from: FamilyNext
+    to: ScheduleGame
+    kind: has_many
+    via: data.byGame (keyed by game)
+  - from: FamilyNext
+    to: ScheduleGame
+    kind: has_one
+    via: data.next (soonest upcoming)

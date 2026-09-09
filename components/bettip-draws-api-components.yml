@@ -1,0 +1,21 @@
+generated: '2026-09-09'
+method: searched
+source: https://bettip.co.za/api/ + https://github.com/zaiqltd/uk49s-widget
+note: >-
+  One first-party embeddable component: a one-tag UK49s results and next-draw
+  countdown widget for any web page, built on this API, with the required
+  BetTip attribution built in. MIT-licensed code, CC BY 4.0 data.
+components:
+  - family: Lottery results widgets
+    items:
+      - name: uk49s-widget
+        kind: web-widget
+        description: >-
+          One-tag UK49s results and next-draw countdown widget for any web
+          page. Renders latest Lunchtime/Teatime (plus Brunchtime/Drivetime)
+          results and a countdown to the next draw; attribution to BetTip is
+          built in.
+        loader: https://cdn.jsdelivr.net/gh/zaiqltd/uk49s-widget@main/dist/uk49s-widget.min.js
+        source: https://github.com/zaiqltd/uk49s-widget
+        demo: https://zaiqltd.github.io/uk49s-widget/
+        license: MIT

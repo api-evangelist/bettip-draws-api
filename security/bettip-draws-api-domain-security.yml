@@ -1,0 +1,15 @@
+generated: '2026-09-09'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: bettip.co.za
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 19 12:54:54 2026 GMT
+  hsts: false
+domains:
+- domain: bettip.co.za
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: false

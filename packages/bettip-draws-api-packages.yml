@@ -1,0 +1,27 @@
+generated: '2026-09-09'
+method: searched
+source: https://bettip.co.za/api/ + https://github.com/zaiqltd/uk49s-widget + registry.npmjs.org probe
+note: >-
+  BetTip ships no registry-published SDK. The one first-party package is the
+  uk49s-widget, a CDN-distributed embeddable web widget that consumes this API.
+  registry.npmjs.org/uk49s-widget returns "Not found" (not published to npm).
+  The GitHub org is zaiqltd (Zaiq, the studio behind BetTip); the provider's own
+  API docs link to it as the contribution/source home for both the widget and
+  the API dataset repo.
+packages:
+  - name: uk49s-widget
+    registry: cdn
+    official: true
+    language: JavaScript
+    license: MIT
+    url: https://github.com/zaiqltd/uk49s-widget
+    cdn: https://cdn.jsdelivr.net/gh/zaiqltd/uk49s-widget@main/dist/uk49s-widget.min.js
+    demo: https://zaiqltd.github.io/uk49s-widget/
+    version: 0.1.0
+    published: null
+    note: >-
+      Version 0.1.0 read from package.json in the GitHub repo (no tags or
+      releases exist, so no dated release metadata is available). The documented
+      jsDelivr CDN URL pins @main, not a version — the distribution is unpinned
+      and floats to the latest commit, so a consumer cannot tell which build
+      they are getting. Last repo push 2026-09-07.
