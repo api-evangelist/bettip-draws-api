@@ -17,50 +17,126 @@ tags:
   - CSV
   - OpenAPI
   - Sports/Betting data
+  - Reference Data
+  - Open Data
+  - Gambling & Betting
+tags_raw:
+  - Lottery results
+  - UK49s
+  - Gosloto
+  - SA National Lottery
+  - JSON
+  - CSV
+  - OpenAPI
+  - Sports/Betting data
   - Reference data
   - Open data
   - Gambling & Betting
 apis:
-  - name: BetTip Draws API
-    description: >-
-      Keyless, CORS-open REST API serving lottery draw results as JSON and CSV across UK49s, Gosloto, SA National
-      Lottery, and world draws. Documented by a public OpenAPI 3.0.3 spec and an llms.txt agent-native surface.
-    image: https://bettip.co.za/og.png
-    humanURL: https://bettip.co.za/api/
-    baseURL: https://bettip.co.za/api/v1/
-    tags:
-      - Lottery results
-      - UK49s
-      - Gosloto
-      - SA National Lottery
-      - JSON
-      - CSV
-      - OpenAPI
-      - Sports/Betting data
-      - Reference data
-      - Open data
-      - Gambling & Betting
-    properties:
-      - type: OpenAPI
-        url: openapi/bettip-draws-api-openapi.json
-      - type: Documentation
-        url: https://bettip.co.za/api/
-      - type: LLMsTxt
-        url: llms/bettip-draws-api-llms.txt
-      - type: SourceCode
-        url: https://github.com/zaiqltd/bettip-draws-api
-      - type: Overlay
-        url: overlays/bettip-draws-api-openapi-overlay.yaml
-      - type: ErrorCatalog
-        url: errors/bettip-draws-api-problem-types.yml
-      - type: Authentication
-        url: authentication/bettip-draws-api-authentication.yml
-      - type: RateLimits
-        url: rate-limits/bettip-draws-api-rate-limits.yml
-      - type: DataModel
-        url: data-model/bettip-draws-api-data-model.yml
-      - type: X-MCPServerCandidate
-        url: mcp/bettip-draws-api-mcp.yml
+- aid: bettip-draws-api:bettip-draws-api-gosloto-api
+  name: BetTip Draws API Gosloto API
+  description: The Gosloto API from BetTip Draws API — 4 operation(s) for gosloto.
+  humanURL: https://bettip.co.za/api/
+  baseURL: https://bettip.co.za/api/v1/
+  tags:
+  - Gosloto
+  properties:
+  - type: OpenAPI
+    url: openapi/bettip-draws-api-gosloto-api-openapi.yml
+  - type: Documentation
+    url: https://bettip.co.za/api/
+  - type: LLMsTxt
+    url: llms/bettip-draws-api-llms.txt
+  - type: SourceCode
+    url: https://github.com/zaiqltd/bettip-draws-api
+  - type: ErrorCatalog
+    url: errors/bettip-draws-api-problem-types.yml
+  - type: Authentication
+    url: authentication/bettip-draws-api-authentication.yml
+  - type: RateLimits
+    url: rate-limits/bettip-draws-api-rate-limits.yml
+  - type: DataModel
+    url: data-model/bettip-draws-api-data-model.yml
+  - type: X-MCPServerCandidate
+    url: mcp/bettip-draws-api-mcp.yml
+- aid: bettip-draws-api:bettip-draws-api-lotto-api
+  name: BetTip Draws API Lotto API
+  description: The Lotto API from BetTip Draws API — 5 operation(s) for lotto.
+  humanURL: https://bettip.co.za/api/
+  baseURL: https://bettip.co.za/api/v1/
+  tags:
+  - Lotto
+  properties:
+  - type: OpenAPI
+    url: openapi/bettip-draws-api-lotto-api-openapi.yml
+  - type: Documentation
+    url: https://bettip.co.za/api/
+  - type: LLMsTxt
+    url: llms/bettip-draws-api-llms.txt
+  - type: SourceCode
+    url: https://github.com/zaiqltd/bettip-draws-api
+  - type: ErrorCatalog
+    url: errors/bettip-draws-api-problem-types.yml
+  - type: Authentication
+    url: authentication/bettip-draws-api-authentication.yml
+  - type: RateLimits
+    url: rate-limits/bettip-draws-api-rate-limits.yml
+  - type: DataModel
+    url: data-model/bettip-draws-api-data-model.yml
+  - type: X-MCPServerCandidate
+    url: mcp/bettip-draws-api-mcp.yml
+- aid: bettip-draws-api:bettip-draws-api-uk49s-api
+  name: BetTip Draws API Uk49s API
+  description: The Uk49s API from BetTip Draws API — 7 operation(s) for uk49s.
+  humanURL: https://bettip.co.za/api/
+  baseURL: https://bettip.co.za/api/v1/
+  tags:
+  - Uk49s
+  properties:
+  - type: OpenAPI
+    url: openapi/bettip-draws-api-uk49s-api-openapi.yml
+  - type: Documentation
+    url: https://bettip.co.za/api/
+  - type: LLMsTxt
+    url: llms/bettip-draws-api-llms.txt
+  - type: SourceCode
+    url: https://github.com/zaiqltd/bettip-draws-api
+  - type: ErrorCatalog
+    url: errors/bettip-draws-api-problem-types.yml
+  - type: Authentication
+    url: authentication/bettip-draws-api-authentication.yml
+  - type: RateLimits
+    url: rate-limits/bettip-draws-api-rate-limits.yml
+  - type: DataModel
+    url: data-model/bettip-draws-api-data-model.yml
+  - type: X-MCPServerCandidate
+    url: mcp/bettip-draws-api-mcp.yml
+- aid: bettip-draws-api:bettip-draws-api-world-api
+  name: BetTip Draws API World API
+  description: The World API from BetTip Draws API — 3 operation(s) for world.
+  humanURL: https://bettip.co.za/api/
+  baseURL: https://bettip.co.za/api/v1/
+  tags:
+  - World
+  properties:
+  - type: OpenAPI
+    url: openapi/bettip-draws-api-world-api-openapi.yml
+  - type: Documentation
+    url: https://bettip.co.za/api/
+  - type: LLMsTxt
+    url: llms/bettip-draws-api-llms.txt
+  - type: SourceCode
+    url: https://github.com/zaiqltd/bettip-draws-api
+  - type: ErrorCatalog
+    url: errors/bettip-draws-api-problem-types.yml
+  - type: Authentication
+    url: authentication/bettip-draws-api-authentication.yml
+  - type: RateLimits
+    url: rate-limits/bettip-draws-api-rate-limits.yml
+  - type: DataModel
+    url: data-model/bettip-draws-api-data-model.yml
+  - type: X-MCPServerCandidate
+    url: mcp/bettip-draws-api-mcp.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
@@ -71,6 +147,8 @@ x-generated:
   confidence: 97
   at: '2026-09-08T14:52:42.802Z'
 common:
+- type: Overlay
+  url: overlays/bettip-draws-api-openapi-overlay.yaml
 - type: Website
   url: https://bettip.co.za/
 - type: DomainSecurity
