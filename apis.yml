@@ -91,6 +91,8 @@ apis:
   humanURL: https://bettip.co.za/api/
   baseURL: https://bettip.co.za/api/v1/
   tags:
+  - UK49s
+  tags_raw:
   - Uk49s
   properties:
   - type: OpenAPI
