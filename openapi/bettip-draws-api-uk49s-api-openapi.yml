@@ -1,0 +1,223 @@
+openapi: 3.2.0
+info:
+  title: BetTip Draws Uk49s API
+  version: 1.0.0
+  description: 'Free JSON and CSV feed of UK49s (5801 draws since 2018-09-01), Gosloto and South African National Lottery results. No key. Attribution: BetTip, https://bettip.co.za/'
+  contact:
+    name: BetTip
+    url: https://bettip.co.za/api/
+  license:
+    name: CC BY 4.0 (data), MIT (code)
+servers:
+- url: https://bettip.co.za/api/v1
+tags:
+- name: Uk49s
+paths:
+  /uk49s/latest.json:
+    get:
+      summary: Latest UK49s result per draw and the last eight overall
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  api:
+                    type: string
+                  version:
+                    type: string
+                  docs:
+                    type: string
+                  attribution:
+                    type: string
+                  licence:
+                    type: string
+                  builtAt:
+                    type: string
+                    format: date-time
+                  resource:
+                    type: string
+                    example: uk49s/latest
+                  data:
+                    $ref: '#/components/schemas/Uk49sLatest'
+      tags:
+      - Uk49s
+      operationId: getUk49sLatestJson
+      x-operation-id-source: derived
+  /uk49s/next.json:
+    get:
+      summary: The next UK49s draw, computed live
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Next'
+      tags:
+      - Uk49s
+      operationId: getUk49sNextJson
+      x-operation-id-source: derived
+  /uk49s/schedule.json:
+    get:
+      summary: Draw times and the summer/winter rule
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Uk49s
+      operationId: getUk49sScheduleJson
+      x-operation-id-source: derived
+  /uk49s/draws.json:
+    get:
+      summary: Every UK49s draw, oldest first
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  api:
+                    type: string
+                  version:
+                    type: string
+                  docs:
+                    type: string
+                  attribution:
+                    type: string
+                  licence:
+                    type: string
+                  builtAt:
+                    type: string
+                    format: date-time
+                  resource:
+                    type: string
+                    example: uk49s/draws
+                  data:
+                    $ref: '#/components/schemas/Uk49sDraws'
+      tags:
+      - Uk49s
+      operationId: getUk49sDrawsJson
+      x-operation-id-source: derived
+  /uk49s/draws.csv:
+    get:
+      summary: Every UK49s draw as CSV
+      responses:
+        '200':
+          description: OK
+          content:
+            text/csv: {}
+      tags:
+      - Uk49s
+      operationId: getUk49sDrawsCsv
+      x-operation-id-source: derived
+  /uk49s/{year}.json:
+    get:
+      summary: One year of UK49s draws
+      parameters:
+      - name: year
+        in: path
+        required: true
+        schema:
+          type: string
+          example: '2026'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: No such year
+      tags:
+      - Uk49s
+      operationId: getUk49s{year}Json
+      x-operation-id-source: derived
+  /uk49s/draws/{date}.json:
+    get:
+      summary: Both UK49s draws on one date
+      parameters:
+      - name: date
+        in: path
+        required: true
+        schema:
+          type: string
+          format: date
+          example: '2026-09-06'
+      responses:
+        '200':
+          description: OK
+        '404':
+          description: No draws on that date
+      tags:
+      - Uk49s
+      operationId: getUk49sDraws{date}Json
+      x-operation-id-source: derived
+components:
+  schemas:
+    Uk49sDraw:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        draw:
+          type: string
+          enum:
+          - brunchtime
+          - lunchtime
+          - drivetime
+          - teatime
+        numbers:
+          type: array
+          items:
+            type: integer
+            minimum: 1
+            maximum: 49
+          minItems: 6
+          maxItems: 6
+        booster:
+          type:
+          - integer
+          - 'null'
+        official:
+          type: boolean
+    Uk49sDraws:
+      type: array
+      items:
+        $ref: '#/components/schemas/Uk49sDraw'
+    Uk49sLatest:
+      type: object
+      properties:
+        byDraw:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Uk49sDraw'
+        recent:
+          $ref: '#/components/schemas/Uk49sDraws'
+    Next:
+      type: object
+      properties:
+        computedAt:
+          type: string
+          format: date-time
+        data:
+          type: object
+          properties:
+            draw:
+              type: string
+            label:
+              type: string
+            atUtc:
+              type: string
+              format: date-time
+            atSast:
+              type: string
+              example: '18:49'
+            secondsToGo:
+              type: integer
+            today:
+              type: array
+              items:
+                type: object

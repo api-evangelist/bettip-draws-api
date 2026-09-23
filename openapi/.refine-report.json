@@ -1,0 +1,49 @@
+{
+  "provider": "bettip-draws-api",
+  "sources": [
+    "_original/bettip-draws-api-openapi.json"
+  ],
+  "outputs": [
+    "bettip-draws-api-gosloto-api-openapi.yml",
+    "bettip-draws-api-lotto-api-openapi.yml",
+    "bettip-draws-api-uk49s-api-openapi.yml",
+    "bettip-draws-api-world-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "bettip-draws-api-openapi.json: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "bettip-draws-api-openapi.json: tagged paths GET /gosloto/next.json -> Gosloto",
+    "bettip-draws-api-openapi.json: tagged paths GET /lotto/next.json -> Lotto",
+    "bettip-draws-api-openapi.json: tagged paths GET /world/next.json -> World",
+    "bettip-draws-api-openapi.json: tagged paths GET /uk49s/latest.json -> Uk49s",
+    "bettip-draws-api-openapi.json: tagged paths GET /uk49s/next.json -> Uk49s",
+    "bettip-draws-api-openapi.json: tagged paths GET /uk49s/schedule.json -> Uk49s",
+    "bettip-draws-api-openapi.json: tagged paths GET /uk49s/draws.json -> Uk49s",
+    "bettip-draws-api-openapi.json: tagged paths GET /uk49s/draws.csv -> Uk49s",
+    "bettip-draws-api-openapi.json: tagged paths GET /uk49s/{year}.json -> Uk49s",
+    "bettip-draws-api-openapi.json: tagged paths GET /uk49s/draws/{date}.json -> Uk49s",
+    "bettip-draws-api-openapi.json: tagged paths GET /gosloto/latest.json -> Gosloto",
+    "bettip-draws-api-openapi.json: tagged paths GET /gosloto/draws.json -> Gosloto",
+    "bettip-draws-api-openapi.json: tagged paths GET /gosloto/draws.csv -> Gosloto",
+    "bettip-draws-api-openapi.json: tagged paths GET /lotto/latest.json -> Lotto",
+    "bettip-draws-api-openapi.json: tagged paths GET /lotto/draws.json -> Lotto",
+    "bettip-draws-api-openapi.json: tagged paths GET /lotto/draws.csv -> Lotto",
+    "bettip-draws-api-openapi.json: tagged paths GET /lotto/payouts.json -> Lotto",
+    "bettip-draws-api-openapi.json: tagged paths GET /world/latest.json -> World",
+    "bettip-draws-api-openapi.json: tagged paths GET /world/draws.json -> World",
+    "bettip-draws-api-openapi.json: declared missing tag: Gosloto",
+    "bettip-draws-api-openapi.json: declared missing tag: Lotto",
+    "bettip-draws-api-openapi.json: declared missing tag: Uk49s",
+    "bettip-draws-api-openapi.json: declared missing tag: World",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "bettip-draws-api-gosloto-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bettip-draws-api-lotto-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bettip-draws-api-uk49s-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bettip-draws-api-world-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
+}

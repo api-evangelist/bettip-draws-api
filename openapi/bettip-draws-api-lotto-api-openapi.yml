@@ -1,0 +1,144 @@
+openapi: 3.2.0
+info:
+  title: BetTip Draws Lotto API
+  version: 1.0.0
+  description: 'Free JSON and CSV feed of UK49s (5801 draws since 2018-09-01), Gosloto and South African National Lottery results. No key. Attribution: BetTip, https://bettip.co.za/'
+  contact:
+    name: BetTip
+    url: https://bettip.co.za/api/
+  license:
+    name: CC BY 4.0 (data), MIT (code)
+servers:
+- url: https://bettip.co.za/api/v1
+tags:
+- name: Lotto
+paths:
+  /lotto/next.json:
+    get:
+      summary: Next scheduled draw per game, with estimates and unavailable times labelled
+      parameters:
+      - name: game
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Optional game slug within this family
+      responses:
+        '200':
+          description: Computed timetable, not confirmation of result publication
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FamilyNext'
+        '404':
+          description: Unknown game
+      tags:
+      - Lotto
+      operationId: getLottoNextJson
+      x-operation-id-source: derived
+  /lotto/latest.json:
+    get:
+      summary: Latest SA National Lottery result per game
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Lotto
+      operationId: getLottoLatestJson
+      x-operation-id-source: derived
+  /lotto/draws.json:
+    get:
+      summary: Every SA National Lottery draw on record
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Lotto
+      operationId: getLottoDrawsJson
+      x-operation-id-source: derived
+  /lotto/draws.csv:
+    get:
+      summary: SA National Lottery draws as CSV
+      responses:
+        '200':
+          description: OK
+          content:
+            text/csv: {}
+      tags:
+      - Lotto
+      operationId: getLottoDrawsCsv
+      x-operation-id-source: derived
+  /lotto/payouts.json:
+    get:
+      summary: Prize divisions per game and draw
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Lotto
+      operationId: getLottoPayoutsJson
+      x-operation-id-source: derived
+components:
+  schemas:
+    FamilyNext:
+      type: object
+      properties:
+        computedAt:
+          type: string
+          format: date-time
+        data:
+          type: object
+          properties:
+            byGame:
+              type: object
+              additionalProperties:
+                $ref: '#/components/schemas/ScheduleGame'
+            next:
+              type:
+              - object
+              - 'null'
+              allOf:
+              - $ref: '#/components/schemas/ScheduleGame'
+    ScheduleGame:
+      type: object
+      properties:
+        game:
+          type: string
+        name:
+          type: string
+        scheduleStatus:
+          type: string
+          enum:
+          - site
+          - observed
+          - official
+          - official-approximate
+          - pending
+        estimated:
+          type: boolean
+        note:
+          type: string
+        source:
+          type:
+          - string
+          - 'null'
+        checkedAt:
+          type:
+          - string
+          - 'null'
+        next:
+          type:
+          - object
+          - 'null'
+          properties:
+            atUtc:
+              type: string
+              format: date-time
+            dateSast:
+              type: string
+              format: date
+            atSast:
+              type: string
+            secondsToGo:
+              type: integer
+              minimum: 1
