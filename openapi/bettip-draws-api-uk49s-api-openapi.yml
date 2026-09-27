@@ -156,6 +156,35 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Uk49sDraws:
+      type: array
+      items:
+        $ref: '#/components/schemas/Uk49sDraw'
+    Next:
+      type: object
+      properties:
+        computedAt:
+          type: string
+          format: date-time
+        data:
+          type: object
+          properties:
+            draw:
+              type: string
+            label:
+              type: string
+            atUtc:
+              type: string
+              format: date-time
+            atSast:
+              type: string
+              example: '18:49'
+            secondsToGo:
+              type: integer
+            today:
+              type: array
+              items:
+                type: object
     Uk49sDraw:
       type: object
       properties:
@@ -183,10 +212,6 @@ components:
           - 'null'
         official:
           type: boolean
-    Uk49sDraws:
-      type: array
-      items:
-        $ref: '#/components/schemas/Uk49sDraw'
     Uk49sLatest:
       type: object
       properties:
@@ -196,28 +221,3 @@ components:
             $ref: '#/components/schemas/Uk49sDraw'
         recent:
           $ref: '#/components/schemas/Uk49sDraws'
-    Next:
-      type: object
-      properties:
-        computedAt:
-          type: string
-          format: date-time
-        data:
-          type: object
-          properties:
-            draw:
-              type: string
-            label:
-              type: string
-            atUtc:
-              type: string
-              format: date-time
-            atSast:
-              type: string
-              example: '18:49'
-            secondsToGo:
-              type: integer
-            today:
-              type: array
-              items:
-                type: object

@@ -3,6 +3,24 @@ description: >-
   A free, keyless lottery-results data feed providing JSON and CSV results for UK49s, Russia Gosloto, the South African
   National Lottery, and a small set of world draws. Backed by a public OpenAPI 3.0.3 contract, open CORS, HTTPS, and no
   authentication. Operated by Easybet Group (Pty) Ltd under the BetTip brand; data is CC BY 4.0.
+deliveryModel:
+  model: open-core
+  license: MIT
+  license_evidence:
+    repo: zaiqltd/bettip-draws-api
+    spdx: MIT
+    stars: 0
+  open_source: true
+  commercial: true
+  callable_host: true
+  label: Open core · an OSS project plus a commercial hosted product
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  - repository-license
+  generated: '2026-09-25'
+  method: derived
 image: https://bettip.co.za/og.png
 url: https://raw.githubusercontent.com/api-evangelist/bettip-draws-api/refs/heads/main/apis.yml
 created: '2026-09-08'
