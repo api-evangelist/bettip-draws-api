@@ -58,25 +58,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    FamilyNext:
-      type: object
-      properties:
-        computedAt:
-          type: string
-          format: date-time
-        data:
-          type: object
-          properties:
-            byGame:
-              type: object
-              additionalProperties:
-                $ref: '#/components/schemas/ScheduleGame'
-            next:
-              type:
-              - object
-              - 'null'
-              allOf:
-              - $ref: '#/components/schemas/ScheduleGame'
     ScheduleGame:
       type: object
       properties:
@@ -120,3 +101,22 @@ components:
             secondsToGo:
               type: integer
               minimum: 1
+    FamilyNext:
+      type: object
+      properties:
+        computedAt:
+          type: string
+          format: date-time
+        data:
+          type: object
+          properties:
+            byGame:
+              type: object
+              additionalProperties:
+                $ref: '#/components/schemas/ScheduleGame'
+            next:
+              type:
+              - object
+              - 'null'
+              allOf:
+              - $ref: '#/components/schemas/ScheduleGame'

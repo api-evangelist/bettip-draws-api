@@ -156,10 +156,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Uk49sDraws:
-      type: array
-      items:
-        $ref: '#/components/schemas/Uk49sDraw'
     Next:
       type: object
       properties:
@@ -185,6 +181,10 @@ components:
               type: array
               items:
                 type: object
+    Uk49sDraws:
+      type: array
+      items:
+        $ref: '#/components/schemas/Uk49sDraw'
     Uk49sDraw:
       type: object
       properties:
