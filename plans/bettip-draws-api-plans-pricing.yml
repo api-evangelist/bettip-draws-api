@@ -19,3 +19,16 @@ plans:
       with traffic and to cache and revalidate archive responses.
     conditions:
       - Attribution to BetTip with a link to https://bettip.co.za/ wherever the data is shown
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  units: []
+  plans:
+  - name: Free
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
