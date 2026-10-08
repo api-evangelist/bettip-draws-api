@@ -167,6 +167,8 @@ x-generated:
   confidence: 97
   at: '2026-09-08T14:52:42.802Z'
 common:
+- type: RateLimits
+  url: rate-limits/bettip-draws-api-rate-limits.yml
 - type: Pricing
   url: https://bettip.co.za/api/
 - type: Overlay
