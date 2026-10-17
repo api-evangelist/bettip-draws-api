@@ -156,15 +156,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Uk49sLatest:
-      type: object
-      properties:
-        byDraw:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/Uk49sDraw'
-        recent:
-          $ref: '#/components/schemas/Uk49sDraws'
     Uk49sDraw:
       type: object
       properties:
@@ -196,6 +187,15 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/Uk49sDraw'
+    Uk49sLatest:
+      type: object
+      properties:
+        byDraw:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Uk49sDraw'
+        recent:
+          $ref: '#/components/schemas/Uk49sDraws'
     Next:
       type: object
       properties:
