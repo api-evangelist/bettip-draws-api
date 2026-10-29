@@ -66,8 +66,111 @@
 
 A free, keyless lottery-results data feed providing JSON and CSV results for UK49s, Russia Gosloto, the South African National Lottery, and a small set of world draws. Backed by a public OpenAPI 3.0.3 contract, open CORS, HTTPS, and no authentication. Operated by Easybet Group (Pty) Ltd under the BetTip brand; data is CC BY 4.0.
 
-- **Provider:** https://bettip.co.za/
-- **Documentation:** https://bettip.co.za/api/
-- **OpenAPI:** https://bettip.co.za/api/openapi.json
-- **llms.txt:** https://bettip.co.za/llms.txt
-- **Source:** https://github.com/zaiqltd/bettip-draws-api
+**Areas:** Lottery results · UK49s · Gosloto · SA National Lottery · JSON · CSV · OpenAPI · Sports/Betting data · Reference Data · Open Data · Gambling & Betting
+
+## BetTip Draws API on APIs.io
+
+Everything profiled for BetTip Draws API is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bettip-draws-api/](https://apis.io/providers/bettip-draws-api/)** — or go straight to one of the APIs or properties below.
+
+### APIs (4)
+
+- [BetTip Draws API Gosloto API](https://apis.io/apis/bettip-draws-api/bettip-draws-api-gosloto-api/) — The Gosloto API from BetTip Draws API — 4 operation(s) for gosloto.
+- [BetTip Draws API Lotto API](https://apis.io/apis/bettip-draws-api/bettip-draws-api-lotto-api/) — The Lotto API from BetTip Draws API — 5 operation(s) for lotto.
+- [BetTip Draws API Uk49s API](https://apis.io/apis/bettip-draws-api/bettip-draws-api-uk49s-api/) — The Uk49s API from BetTip Draws API — 7 operation(s) for uk49s.
+- [BetTip Draws API World API](https://apis.io/apis/bettip-draws-api/bettip-draws-api-world-api/) — The World API from BetTip Draws API — 3 operation(s) for world.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [bettip-draws-api-mcp.yml](https://apis.io/servers/bettip-draws-api/bettip-draws-api-mcp-yml/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Bettip Draws Api Openapi Overlay](https://apis.io/overlays/bettip-draws-api/bettip-draws-api-openapi-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Bettip Draws Api Authentication](https://apis.io/security/bettip-draws-api/bettip-draws-api-authentication/)
+- [Bettip Draws Api Domain Security](https://apis.io/security/bettip-draws-api/bettip-draws-api-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Bettip Draws Api Plans Pricing](https://apis.io/plans/bettip-draws-api/bettip-draws-api-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Bettip Draws Api Rate Limits](https://apis.io/rate-limits/bettip-draws-api/bettip-draws-api-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://bettip.co.za/)
+- [Pricing](https://bettip.co.za/api/)
+- [GitHub](https://github.com/zaiqltd)
+
+## API Evangelist rating
+
+**Kin Score 28.4** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 40.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 23.2 |
+| Access clarity | 31.6 |
+
+**Agent readiness 25.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bettip-draws-api/](https://apis.io/providers/bettip-draws-api/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for BetTip Draws API: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bettip-draws-api/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
